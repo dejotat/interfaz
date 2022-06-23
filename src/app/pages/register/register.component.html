@@ -1,0 +1,55 @@
+<div class="container">
+  <main class="content">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <form (submit)="signup()">
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="user.firstname" name="firstname" placeholder="Nombre"/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="user.lastname" name="lastname" placeholder="Apellido"/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="email" [(ngModel)]="user.email" name="email" placeholder="Correo"/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="password" [(ngModel)]="user.password" name="password" placeholder="Contraseña"/>
+                </p>
+              </div>
+              
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="role" [(ngModel)]="user.role">
+                      <option value="admin">Admin</option>
+                      <option value="teacher">Profesor</option>
+                      <option value="coordinator">Coordinador</option>
+                      <option value="Estudiante">Estudiante</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button class="button is-link is-fullwidth" type="submit"> REGISTRAR </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </main>
+</div>

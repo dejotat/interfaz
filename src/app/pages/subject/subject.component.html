@@ -1,0 +1,86 @@
+<div class="container">
+  <main class="content">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <form (submit)="createSubjectRequest()">
+
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth" >
+                    <select name="role" [(ngModel)]="subject.teacher">
+                      <option *ngFor="let th of teachers" value="{{th._id}}">{{th.firstname}} {{th.lastname}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="subject.name" name="name" placeholder="Nombre Materia" required/>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="subject.code" name="code" placeholder="Codigo Materia" required/>
+                </p>
+              </div>
+             
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="number" [(ngModel)]="subject.intensity" name="intensity" placeholder="Intensidad Horaria Materia" required/>
+                </p>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="program" [(ngModel)]="subject.program">
+                      <option *ngFor="let prg of programs" value="{{prg.code}}">{{prg.name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                 
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button class="button is-link is-fullwidth" type="submit">REGISTRAR</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <h1>PROGRAMA</h1>
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th><abbr title="Code">Codigo</abbr></th>
+              <th><abbr title="Name">Nombre</abbr></th>
+              <th><abbr title="Schedule">Horario</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+      
+            <tr *ngFor="let s of subjects">
+              <td>{{s.code}}</td>
+              <td>{{s.name}}</td>
+              <td>{{s.schedule}}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+

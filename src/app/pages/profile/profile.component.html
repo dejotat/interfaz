@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="column"></div>
+
+  <ng-container *ngIf="apiService.getRole() == 'admin'">
+    <div class="columns">
+        <div class="column is-one-fifth">
+          <a class="" routerLink="/register">
+            <small>R. Usuario</small>
+          </a>
+          <br>
+          <a class="" routerLink="/subject">
+            <small>R. Materias</small>
+          </a>
+          <br>
+          <a class="" routerLink="/attendance-create">
+            <small>G. Reporte</small>
+          </a>
+          <br>
+          
+        </div>
+        <div class="column">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Rol</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+              <tr *ngFor="let user of users">
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.role}}</td>
+                <td>{{user.email}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="apiService.getRole() == 'teacher'">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <a class="" routerLink="/attendance-create">
+          <small>R. Asistencia</small>
+        </a>
+        <br>
+
+      </div>
+      <div class="column">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Tema</th>
+              <th>Estudiantes</th>
+              <th>Dificultades</th>
+            </tr>
+          </thead>
+          <tbody>
+      
+            <tr *ngFor="let att of attendances">
+              <td>{{(att.date).substring(0, 10)}}</td>
+              <td>{{att.evento}}</td>
+              <td>{{att.students}}</td>
+              <td>{{att.difficulties}}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="apiService.getRole() == 'coordinator'">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <a class="" routerLink="/program">
+          <small>R. Programa</small>
+        </a>
+
+      </div>
+      <div class="column">
+        <p>Programas</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+      
+            <tr *ngFor="let p of programs">
+              <td>{{p.code}}</td>
+              <td>{{p.name}}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <p>Materias</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+      
+            <tr *ngFor="let s of subjects">
+              <td>{{s.code}}</td>
+              <td>{{s.name}}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <div class="column"></div>
+
+</div>

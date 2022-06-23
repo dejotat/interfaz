@@ -1,0 +1,37 @@
+<div class="container">
+  <main class="content">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <form (submit)="attendanceRequest()">
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="att.subject" name="subject" placeholder="Tema" required/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="number" [(ngModel)]="att.students" name="students" placeholder="Asistentes" required/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" name="difficulties" [(ngModel)]="att.difficulties" placeholder="Dificultades"></textarea>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button class="button is-link is-fullwidth" type="submit">REGISTRAR</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </main>
+</div>

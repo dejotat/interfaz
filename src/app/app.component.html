@@ -1,0 +1,37 @@
+
+  <nav class="navbar has-shadow is-light mb-5" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <span class="navbar-item" href="/">
+          <th>REGISTRO DE DATOS</th>
+        </span>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <ng-container *ngIf="!apiService.isAuth(); else logout">
+            
+          </ng-container>
+          <ng-template #logout>
+            <div class="field">
+              <div class="navbar-item" >
+                <th class="mr-1">{{ user["name"] }}</th>
+                <p>&nbsp;&nbsp;</p>
+                <p class="control">
+                  <a class="" (click)="apiService.logoutRequest()">
+                    <th>salir</th>
+                  </a>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+  </div>
+  </nav>
+<router-outlet></router-outlet>

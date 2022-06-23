@@ -1,0 +1,38 @@
+<div class="container">
+  <main class="content">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <form (submit)="createProgramRequest()">
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="program.code" name="code" placeholder="5834" required/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="program.name" name="name" placeholder="Trabajo Social" required/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="number" [(ngModel)]="program.duration" name="duration" placeholder="Duración" required/>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button class="button is-link is-fullwidth" type="submit">REGISTRAR</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </main>
+</div>
+
